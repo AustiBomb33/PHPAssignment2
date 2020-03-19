@@ -1,0 +1,24 @@
+* {
+    text-align: center;
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+fieldset{
+    display: inline;
+}
+
+fieldset.invisible{
+    border: none;
+}
+
+label{
+    display: block;
+}
