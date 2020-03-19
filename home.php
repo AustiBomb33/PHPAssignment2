@@ -1,4 +1,5 @@
 <?php
+
 $dbconn = new PDO("mysql:host=172.31.22.43;dbname=Austin_A1099028", "Austin_A1099028", "R4Fr-bgQ-_");
 
 //are we adding a new game?
@@ -46,13 +47,11 @@ function getAllGames($dbconn){
 <body>
 <h1>Austin Marcoux's Video Game Directory</h1>
 <p>
-    <a href="index.php">Log Out</a>
 </p>
 <!--form to add new game-->
 <?php
-echo "<form action=\"home.php?username=$login\" method=\"post\">";
+echo "<form action='home.php' method='post'>";
 ?>
-
     <fieldset>
         <h2>Add a Game to the Database</h2>
         <label for="newGame">Add a game:<input type="text" name="newGame"></label>
@@ -61,7 +60,7 @@ echo "<form action=\"home.php?username=$login\" method=\"post\">";
     </fieldset>
 </form>
 <?php
-echo "<form action=\"home.php?username=$login\" method=\"post\">";
+echo "<form action=\"home.php\" method=\"post\">";
 ?>
     <fieldset>
         <h2>Remove a Game From the Database</h2>
