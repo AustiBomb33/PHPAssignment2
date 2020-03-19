@@ -41,13 +41,13 @@ function getAllGames($dbconn){
     <meta charset="UTF-8">
     <title>Video Games Directory</title>
     <link rel="stylesheet" href="styles.css">
-    <a href="index.html">test link</a>
-    <a href="home.php">Home</a>
 </head>
 <body>
 <h1>Austin Marcoux's Video Game Directory</h1>
-<p>
-</p>
+<div>
+    <a href="index.html">About Page</a>
+    <a href="home.php">Home</a>
+</div>
 <!--form to add new game-->
 <?php
 echo "<form action='home.php' method='post'>";
@@ -98,7 +98,7 @@ echo "<form action=\"home.php\" method=\"post\">";
                 <tr><td>$game[0]</td>
                 <td>$game[1]</td>
                 <td><a href='edit.php?name=$game[0]'>X</a></td>
-                <td><a href='delete.php?name=$game[0]'>X</a></td></tr>";
+                <td><a href='delete.php?name=$game[0]' onclick='confirm('Are you sure you want to remove $game[0]?')'>X</a></td></tr>";
             }
         ?>
     </table>
