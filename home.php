@@ -41,6 +41,11 @@ function getAllGames($dbconn){
     <meta charset="UTF-8">
     <title>Video Games Directory</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function()
+    </script>
+
 </head>
 <body>
 <h1>Austin Marcoux's Video Game Directory</h1>
@@ -59,24 +64,7 @@ echo "<form action='home.php' method='post'>";
         <button type="submit">Submit new game</button>
     </fieldset>
 </form>
-<?php
-echo "<form action=\"home.php\" method=\"post\">";
-?>
-    <fieldset>
-        <h2>Remove a Game From the Database</h2>
-        <label for="delGame">
-            <select name="delGame">
-                <?php
-                $gamesTable = getAllGames($dbconn);
-                foreach($gamesTable as $game){
-                    echo "<option>$game[0]</option>";
-                }
-                ?>
-            </select>
-        </label>
-        <button type="submit">Delete Game</button>
-    </fieldset>
-</form>
+
 <fieldset class="invisible">
     <h2>List of all Games</h2>
     <table>
@@ -93,12 +81,14 @@ echo "<form action=\"home.php\" method=\"post\">";
             Delete
         </th>
         <?php
-            foreach ($gamesTable as $game){
+        $gamesTable = getAllGames($dbconn);
+
+        foreach ($gamesTable as $game){
                 echo "
                 <tr><td>$game[0]</td>
                 <td>$game[1]</td>
                 <td><a href='edit.php?name=$game[0]'>X</a></td>
-                <td><a href='delete.php?name=$game[0]' onclick='confirm('Are you sure you want to remove $game[0]?')'>X</a></td></tr>";
+                <td><a href='delete.php?name=$game[0]' onclick='return confirm(\"Are you sure you want to remove $game[0]?\")'>X</a></td></tr>";
             }
         ?>
     </table>
