@@ -2,7 +2,7 @@
 session_start();
 $login = isset($_SESSION['username']);
 if(!$login){
-    session_abort();
+    session_destroy();
 }
 ?>
 <!DOCTYPE html>
