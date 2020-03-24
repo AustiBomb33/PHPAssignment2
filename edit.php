@@ -30,7 +30,7 @@ if(isset($_POST['gameTitle'])){
     <body>
     <h1>Austin Marcoux's Video Game Directory</h1>
     <div>
-        <a href="index.html">About Page</a>
+        <a href="index.php">About Page</a>
         <a href="home.php">Home</a>
     </div>
     <form action="<?php echo "http://172.31.22.43/~Austin_A1099028/Assignment2/edit.php?name=$gameTitle";?>" method="post">

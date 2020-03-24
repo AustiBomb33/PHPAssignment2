@@ -41,16 +41,11 @@ function getAllGames($dbconn){
     <meta charset="UTF-8">
     <title>Video Games Directory</title>
     <link rel="stylesheet" href="styles.css">
-
-    <script>
-        function()
-    </script>
-
 </head>
 <body>
 <h1>Austin Marcoux's Video Game Directory</h1>
 <div>
-    <a href="index.html">About Page</a>
+    <a href="index.php">About Page</a>
     <a href="home.php">Home</a>
 </div>
 <!--form to add new game-->
