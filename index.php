@@ -1,6 +1,6 @@
 <?php
 session_start();
-$login = isset($_SESSION['name']);
+$login = isset($_SESSION['username']);
 if(!$login){
     session_abort();
 }

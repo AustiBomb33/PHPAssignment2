@@ -24,6 +24,6 @@ fieldset.invisible{
     border: none;
 }
 
-label{
+input, label{
     display: block;
 }
