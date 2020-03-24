@@ -32,6 +32,14 @@ if(isset($_POST['gameTitle'])){
     <div>
         <a href="index.php">About Page</a>
         <a href="home.php">Home</a>
+        <?php
+        if(!$login){
+            echo "<a href = 'login.php'>Login</a>
+<a href='register.php'>Register</a>";
+        } else {
+            echo "<a href='logout.php'>Log Out</a>";
+        }
+        ?>
     </div>
     <form action="<?php echo "http://172.31.22.43/~Austin_A1099028/Assignment2/edit.php?name=$gameTitle";?>" method="post">
         <label for="gameTitle">Game Title:</label><?php echo "<input id='gameTitle' name='gameTitle' type='text' value='$gameTitle'>"?>

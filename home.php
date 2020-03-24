@@ -47,6 +47,14 @@ function getAllGames($dbconn){
 <div>
     <a href="index.php">About Page</a>
     <a href="home.php">Home</a>
+    <?php
+    if(!$login){
+        echo "<a href = 'login.php'>Login</a>
+<a href='register.php'>Register</a>";
+    } else {
+        echo "<a href='logout.php'>Log Out</a>";
+    }
+    ?>
 </div>
 <!--form to add new game-->
 <?php
