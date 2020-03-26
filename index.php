@@ -27,7 +27,7 @@ if(!$login){
     ?>
 </div>
 
-<p>This website was created because I like video games, and so I decided to relate my assignment to a passion of mine. Originally, the site used a quite insecure method of having a user log in, passing their login name around with $_POST, but in the future the site will use PHP's Sessions for authentication
+<p>This website was created because I like video games, and so I decided to relate my assignment to a passion of mine. Originally, the site used a quite insecure method of having a user log in, passing their login name around with $_POST, but as of 2020-03-24 the site uses PHP's Sessions for authentication
 </p>
 
 </body>
