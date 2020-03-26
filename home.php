@@ -64,16 +64,18 @@ function getAllGames($dbconn){
 </div>
 <!--form to add new game-->
 <?php
-echo "<form action='home.php' method='post'>";
-?>
+if($login){
+echo '<form action="home.php" method="post">
     <fieldset>
         <h2>Add a Game to the Database</h2>
         <label for="newGame">Add a game:<input type="text" name="newGame"></label>
-        <label for="newGameDesc" class="desc">enter the new game's description:<input type="text" name="newGameDesc"></label>
+        <label for="newGameDesc" class="desc">enter the new game\'s description:<input type="text" name="newGameDesc"></label>
         <button type="submit">Submit new game</button>
     </fieldset>
 </form>
-
+';
+}
+?>
 <fieldset class="invisible">
     <h2>List of all Games</h2>
     <table>
@@ -83,21 +85,21 @@ echo "<form action='home.php' method='post'>";
         <th>
             Game Description
         </th>
-        <th>
-            Edit
-        </th>
-        <th>
-            Delete
-        </th>
         <?php
+        if($login){
+            echo "<th>Edit</th><th>Delete</th>";
+       }
         $gamesTable = getAllGames($dbconn);
 
         foreach ($gamesTable as $game){
                 echo "
                 <tr><td>$game[0]</td>
-                <td>$game[1]</td>
-                <td><a href='edit.php?name=$game[0]'>X</a></td>
-                <td><a href='delete.php?name=$game[0]' onclick='return confirm(\"Are you sure you want to remove $game[0]?\")'>X</a></td></tr>";
+                <td>$game[1]</td>";
+
+                if($login){
+                    echo "<td><a href='edit.php?name=$game[0]'>X</a></td>
+                <td><a href='delete.php?name=$game[0]' onclick='return confirm(\"Are you sure you want to remove $game[0] ? \")'>X</a></td></tr>";
+                }
             }
         ?>
     </table>
