@@ -15,10 +15,11 @@ if (!empty($_POST['newGame']) && !empty($_POST['newGameDesc'])){
         array_push($gameTitles, $game[0]);
     }
 
-    if(!in_array($_POST['newGame'],$gameTitles )) {
+    $newGameName = $_POST['newGame'];
+    if(!in_array($newGameName,$gameTitles )) {
         $query = 'insert into games (gameTitle, gameDesc) values (:title, :desc)';
         $stmt = $dbconn->prepare($query);
-        $stmt->bindParam(':title', $_POST['newGame']);
+        $stmt->bindParam(':title', $newGameName);
         $stmt->bindParam(':desc', $_POST['newGameDesc']);
         $stmt->execute();
     }
@@ -70,6 +71,7 @@ echo '<form action="home.php" method="post">
         <h2>Add a Game to the Database</h2>
         <label for="newGame">Add a game:<input type="text" name="newGame"></label>
         <label for="newGameDesc" class="desc">enter the new game\'s description:<input type="text" name="newGameDesc"></label>
+        <label for="image">Choose an image <input name="image" type="file" accept="image/jpeg"></label>
         <button type="submit">Submit new game</button>
     </fieldset>
 </form>
@@ -93,7 +95,8 @@ echo '<form action="home.php" method="post">
 
         foreach ($gamesTable as $game){
                 echo "
-                <tr><td>$game[0]</td>
+                <tr>
+                <td>$game[0]</td>
                 <td>$game[1]</td>";
 
                 if($login){

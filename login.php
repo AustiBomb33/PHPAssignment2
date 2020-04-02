@@ -40,7 +40,7 @@
                 $password = $_POST['password'];
                 if(password_verify($password, $hash)){
                     $_SESSION['username'] = $username;
-                    header("location: http://172.31.22.43/~Austin_A1099028/Assignment2/");
+                    header("location: http://lamp.computerstudi.es/~Austin_A1099028/Assignment2/");
                 } else {
                     echo "Bad user";
                     session_destroy();
